@@ -9,7 +9,6 @@
     <% if @post_image.user == current_user %>
       <%= link_to "削除", post_image_path(@post_image), method: :delete  %>
     <% end %>
-    
     <!--いいね-->
     <% if @post_image.favorited_by?(current_user) %>
       <p>

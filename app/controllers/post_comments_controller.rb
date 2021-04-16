@@ -12,6 +12,7 @@ class PostCommentsController < ApplicationController
 
   def destroy
     PostComment.find_by(id: params[:id], post_image_id: params[:post_image_id]).destroy
+    # idを2つ指定しなければならない理由は、ルーティングをネストした結果、urlに両方のid指定が必要だから？
     redirect_to post_image_path(params[:post_image_id])
   end
 
